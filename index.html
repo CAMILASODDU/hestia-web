@@ -1,11 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SCALA Arquitectura</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>holis gente</h1>
+
+<header class="header">
+  <div class="logo">
+    SCALA<br><span>ARTQUITECTURA</span>
+  </div>
+
+  <nav class="nav">
+    <a class="active" href="#">HOME</a>
+    <a href="#">SOBRE NOSOTROS</a>
+    <a href="#">PROYECTOS</a>
+    <a href="#">CONTACTO</a>
+  </nav>
+
+  <div class="burger" id="burger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#">HOME</a>
+  <a href="#">SOBRE NOSOTROS</a>
+  <a href="#">PROYECTOS</a>
+  <a href="#">CONTACTO</a>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Arquitectura y diseño con identidad propia.</h1>
+      <p>
+        Proyectos desarrollados por la Arquitecta María Inés Frittyón,
+        donde se integra la arquitectura con el arte, la docencia y la construcción.
+      </p>
+    </div>
+    <div class="hero-image">
+      <img src="assets/hero-sketch.png" alt="Boceto arquitectónico">
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="gallery-item"></div>
+    <div class="gallery-item"></div>
+    <div class="gallery-item"></div>
+  </section>
+
+  <section class="cta">
+    <h2>¿Hablamos sobre tu próximo proyecto?</h2>
+    <p>
+      Estamos para acompañarte en cada etapa: desde la idea hasta la obra.
+      Escribinos y vemos juntos cómo podemos aportar desde la arquitectura y el diseño.
+    </p>
+    <button>CONTACTO</button>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-text">
+    Este espacio refleja la forma en que trabajamos: con sensibilidad, oficio y compromiso.
+    Diseñamos arquitectura con propósito.
+  </div>
+
+  <div class="footer-links">
+    <h4>Home</h4>
+    <a href="#">Sobre Nosotros</a>
+    <a href="#">Servicios</a>
+    <a href="#">Contacto</a>
+    <a href="#">Privacidad</a>
+  </div>
+
+  <div class="footer-links">
+    <h4>Proyectos</h4>
+    <a href="#">Vivienda Individual</a>
+    <a href="#">Colectiva</a>
+    <a href="#">Cultura / Institucional</a>
+    <a href="#">Comercial / Stands</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
