@@ -269,26 +269,32 @@ body {
 }
 
 /* FOOTER */
-.footer {
+
+.site-footer {
   background: #111;
-  color: #ccc;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  padding: 60px 40px;
-  gap: 40px;
+  color: #aaa;
+
+  padding: 20px 15px;
+
+  text-align: center;
+
   font-size: 13px;
+
+  border-top: 1px solid #222;
 }
 
-.footer h4 {
-  color: #fff;
-  margin-bottom: 12px;
+.site-footer p {
+  margin: 0;
+  line-height: 1.5;
 }
 
-.footer a {
-  display: block;
-  color: #ccc;
-  text-decoration: none;
-  margin-bottom: 6px;
+/* Mobile mejora */
+
+@media (max-width: 480px) {
+  .site-footer {
+    font-size: 12px;
+    padding: 18px 12px;
+  }
 }
 
 /* RESPONSIVE */
