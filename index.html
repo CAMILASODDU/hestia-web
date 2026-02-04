@@ -1,93 +1,110 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SCALA Arquitectura</title>
+  <title>HESTIA Estudio</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<header class="header">
-  <div class="logo">
-    SCALA<br><span>ARTQUITECTURA</span>
-  </div>
+  <header class="header">
+    <div class="logo">
+      <img src="logo_hestia.png" alt="logo">
+    </div>
 
-  <nav class="nav">
-    <a class="active" href="#">HOME</a>
+    <nav class="nav">
+      <a class="active" href="#">HOME</a>
+      <a href="#">SOBRE NOSOTROS</a>
+      <a href="#">PROYECTOS</a>
+      <a href="#">CONTACTO</a>
+    </nav>
+
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#">HOME</a>
     <a href="#">SOBRE NOSOTROS</a>
     <a href="#">PROYECTOS</a>
     <a href="#">CONTACTO</a>
   </nav>
 
-  <div class="burger" id="burger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</header>
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Hestia by gerez - estudio de diseño integral</h1>
+        <p>
+          Diseñamos y ejecutamos proyectos donde el neurodiseño, el interiorismo y los objetos de autor se articulan
+          mediante una consultoría de ideas, creando espacios sensibles, funcionales y con identidad propia.
+        </p>
+      </div>
+      <div class="hero-image">
+        <img src="espacio.png" alt="Boceto arquitectónico">
+      </div>
+    </section>
 
-<nav class="mobile-nav" id="mobileNav">
-  <a href="#">HOME</a>
-  <a href="#">SOBRE NOSOTROS</a>
-  <a href="#">PROYECTOS</a>
-  <a href="#">CONTACTO</a>
-</nav>
+    <div class="gallery-item">
+      <section class="bio">
+        <p>Bio Estudio Hestia: Fundada en 2013 por Leandro Gerez (Diseñador Industrial), Hestia by Gerez
+          evolucionó de amoblamientos residenciales a un estudio de diseño integral que optimiza espacios y
+          productos mediante la semántica, semiótica y neuroarquitectura, elevando la calidad de vida.
+          Recientemente Daiana Comesaña (Terapeuta y Docente) se unió como socia, consolidando una
+          visión que trasciende lo profesional. Casados hace 18 años, su experiencia personal se refleja en la
+          esencia de Hestia, cuyo nombre evoca hogar, familia , armonía y estabilidad. Enfocados en
+          innovación y sinergia, potencian la identidad de cada proyecto, asegurando eficiencia y valor. Su
+          experiencia abarca proyectos comerciales, empresariales y residenciales en Argentina y Suecia,
+          adaptando propuestas y servicios a firmas como CittaBella, Hardware Johnson, Sheraton, Hilton,
+          Baobab y Weiaut. Su participación en exposiciones nacionales e internacionales
+          subraya su compromiso con un diseño que considera profundamente la percepción humana y los
+          vínculos entre las personas y su entorno, aplicando soluciones de neurodiseño vanguardistas que
+          responden a las necesidades presentes y futuras, integrando arte y funcionalidad para crear espacios
+          que resuenan con bienestar y propósito.</p>
 
-<main>
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Arquitectura y diseño con identidad propia.</h1>
+      </section>
+    </div>
+
+    <section class="cta">
+      <h2>¿Hablamos sobre tu próximo proyecto?</h2>
       <p>
-        Proyectos desarrollados por la Arquitecta María Inés Frittyón,
-        donde se integra la arquitectura con el arte, la docencia y la construcción.
+        Estamos para acompañarte en cada etapa: desde la idea hasta la obra.
+        Escribinos y vemos juntos cómo podemos aportar desde la arquitectura y el diseño.
       </p>
+      <button>CONTACTO</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-text">
+      Este espacio refleja la forma en que trabajamos: con sensibilidad, oficio y compromiso.
+      Diseñamos arquitectura con propósito.
     </div>
-    <div class="hero-image">
-      <img src="assets/hero-sketch.png" alt="Boceto arquitectónico">
+
+    <div class="footer-links">
+      <h4>Home</h4>
+      <a href="#">Sobre Nosotros</a>
+      <a href="#">Servicios</a>
+      <a href="#">Contacto</a>
+      <a href="#">Privacidad</a>
     </div>
-  </section>
 
-  <section class="gallery">
-    <div class="gallery-item"></div>
-    <div class="gallery-item"></div>
-    <div class="gallery-item"></div>
-  </section>
+    <div class="footer-links">
+      <h4>Proyectos</h4>
+      <a href="#">Vivienda Individual</a>
+      <a href="#">Colectiva</a>
+      <a href="#">Cultura / Institucional</a>
+      <a href="#">Comercial / Stands</a>
+    </div>
+  </footer>
 
-  <section class="cta">
-    <h2>¿Hablamos sobre tu próximo proyecto?</h2>
-    <p>
-      Estamos para acompañarte en cada etapa: desde la idea hasta la obra.
-      Escribinos y vemos juntos cómo podemos aportar desde la arquitectura y el diseño.
-    </p>
-    <button>CONTACTO</button>
-  </section>
-</main>
-
-<footer class="footer">
-  <div class="footer-text">
-    Este espacio refleja la forma en que trabajamos: con sensibilidad, oficio y compromiso.
-    Diseñamos arquitectura con propósito.
-  </div>
-
-  <div class="footer-links">
-    <h4>Home</h4>
-    <a href="#">Sobre Nosotros</a>
-    <a href="#">Servicios</a>
-    <a href="#">Contacto</a>
-    <a href="#">Privacidad</a>
-  </div>
-
-  <div class="footer-links">
-    <h4>Proyectos</h4>
-    <a href="#">Vivienda Individual</a>
-    <a href="#">Colectiva</a>
-    <a href="#">Cultura / Institucional</a>
-    <a href="#">Comercial / Stands</a>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
