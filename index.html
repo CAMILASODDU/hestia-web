@@ -2,78 +2,154 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hestia Estudio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hestia Studio</title>
 
-  <!-- FAVICON -->
-  <link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style-index.css">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- ================= HEADER ================= -->
-  <header class="header">
-    <div class="nav-container">
-      
-      <div class="logo">
-        <a href="index.html">
-          <img src="logo_hestia.png" alt="Hestia Estudio">
-        </a>
-      </div>
+<header class="header" id="header">
+<div class="container nav-container">
+<div class="logo">
+<img src="LOGO_hestiabygerez.png" alt="Logo">
+</div>
 
-      <nav class="nav" id="nav">
-        <a href="index.html">Inicio</a>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="productos.html">Productos/Servicios</a>
-        <a href="contacto.html">Contacto</a>
-      </nav>
+<nav>
+<ul class="nav-links">
+<li><a href="#hero">Inicio</a></li>
+<li><a href="#about">Quiénes Somos</a></li>
+<li><a href="#services">Servicios</a></li>
+<li><a href="#contact">Contacto</a></li>
+</ul>
+</nav>
 
-      <!-- Botón Hamburguesa -->
-      <div class="menu-toggle" id="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+<div class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</div>
+</div>
+</header>
 
-    </div>
-  </header>
+<!-- HERO -->
+<section class="hero" id="hero">
+<div class="container hero-container">
 
-  <!-- ================= HERO ================= -->
-  <section class="hero">
-    <div class="hero-content">
+<div class="hero-text">
+<h1>Hestia by Gerez</h1>
+<p>
+Arquitectura contemporánea y diseño integral orientado a crear espacios
+funcionales, estéticos y técnicamente precisos.
+</p>
+<a href="#contact" class="btn-primary">Iniciar Proyecto</a>
+</div>
 
-      <div class="hero-left">
-        <h1 class="hero-title">Hestia by gerez</h1>
-        <h2 class="hero-subtitle">Estudio de diseño integral</h2>
-        <p class="hero-text">
-          Hestia by gerez - estudio de diseño integral especializado en
-          arquitectura, interiorismo y desarrollo de mobiliario.
-          Creamos espacios funcionales, estéticos y atemporales.
-        </p>
-      </div>
+<div class="hero-image">
+<img src="espacio.png" alt="Proyecto">
+</div>
 
-      <div class="hero-right">
-        <img src="living-silueta.png" alt="Proyecto destacado">
-      </div>
+</div>
+</section>
 
-    </div>
-  </section>
+<!-- QUIENES SOMOS -->
+<section class="about section" id="about">
+<div class="container">
+<h2>Quiénes Somos</h2>
+<p>
+Estudio especializado en arquitectura e interiorismo con enfoque técnico y conceptual.
+Diseñamos espacios que integran proporción, materialidad y funcionalidad,
+desarrollando proyectos con precisión constructiva y dirección profesional en cada etapa.
+</p>
+</div>
+</section>
 
-  <!-- Script menú -->
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const nav = document.getElementById('nav');
+<!-- SERVICIOS -->
+<section class="services section" id="services">
+<div class="container">
+<h2>Servicios</h2>
 
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
-  </script>
+<div class="services-grid">
 
+<div class="service-card" onclick="window.location.href='arquitectura.html'">
+<h3>Arquitectura</h3>
+<p>Proyectos residenciales y comerciales desarrollados integralmente.</p>
+</div>
+
+<div class="service-card" onclick="openCarousel()">
+<h3>Interiorismo</h3>
+<p>Diseño interior con identidad, equilibrio y sofisticación.</p>
+</div>
+
+<div class="service-card" onclick="openCarousel()">
+<h3>Mobiliario</h3>
+<p>Desarrollo de piezas exclusivas adaptadas al espacio.</p>
+</div>
+
+<div class="service-card" onclick="openCarousel()">
+<h3>Dirección de Obra</h3>
+<p>Supervisión técnica y coordinación integral del proyecto.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CARRUSEL MODAL -->
+<div class="carousel-modal" id="carouselModal">
+<div class="carousel-content">
+<span class="close" onclick="closeCarousel()">×</span>
+
+<button class="arrow left" onclick="prevSlide()">‹</button>
+
+<img id="carouselImage" src="interior1.jpg" alt="Proyecto">
+
+<button class="arrow right" onclick="nextSlide()">›</button>
+</div>
+</div>
+
+<!-- CONTACTO -->
+<section class="contact section" id="contact">
+<div class="container contact-wrapper">
+
+<div class="contact-social">
+
+<div class="social-card">
+<h4>Instagram</h4>
+<p>@hestiastudio</p>
+</div>
+
+<div class="social-card">
+<h4>WhatsApp</h4>
+<p>+54 221 575 4925</p>
+</div>
+
+<div class="social-card">
+<h4>Email</h4>
+<p>camisoddu@gmail.com</p>
+</div>
+
+</div>
+
+<form action="https://formsubmit.co/camisoddu@gmail.com" method="POST" class="contact-form">
+<input type="hidden" name="_captcha" value="false">
+<input type="text" name="Nombre" placeholder="Nombre completo" required>
+<input type="email" name="Email" placeholder="Correo electrónico" required>
+<textarea name="Mensaje" rows="5" placeholder="Describa su proyecto..." required></textarea>
+<button type="submit" class="btn-primary">Enviar Consulta</button>
+</form>
+
+</div>
+</section>
+
+<footer class="footer">
+<p>© 2026 Hestia Studio</p>
+</footer>
+
+<script src="scripts.js"></script>
 </body>
 </html>
