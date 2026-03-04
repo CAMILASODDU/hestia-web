@@ -42,7 +42,8 @@ body {
 }
 
 .logo img {
-    height: 55px;
+    height: 90px;   /* más grande pero sin afectar el header */
+    width: auto;
 }
 
 /* NAV */
@@ -62,7 +63,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: #c6a45a;
+    color: #7A0F14;
 }
 
 /* ================= HAMBURGER ================= */
@@ -133,7 +134,7 @@ body {
 /* ================= BUTTON ================= */
 
 .btn-primary {
-    background: #c6a45a;
+    background: #7A0F14;
     color: white;
     padding: 14px 32px;
     border: none;
@@ -145,7 +146,7 @@ body {
 }
 
 .btn-primary:hover {
-    background: #a88b45;
+    background: #7A0F14;
 }
 
 /* ================= SECTIONS ================= */
@@ -154,10 +155,19 @@ body {
     padding: 120px 0;
 }
 
+
+
 .section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
     margin-bottom: 25px;
+}
+
+/* ================= ABOUT ================= */
+.about {
+    align-items: center;
+    background-color: #111;
+    color: white;
 }
 
 /* ================= SERVICES ================= */
@@ -180,7 +190,7 @@ body {
 .service-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    border-color: #c6a45a;
+    border-color: #7A0F14;
 }
 
 /* ================= CARRUSEL ================= */
@@ -281,7 +291,7 @@ body {
 }
 
 .social-card:hover {
-    border-color: #c6a45a;
+    border-color: #7A0F14;
 }
 
 .contact-form {
