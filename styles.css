@@ -659,3 +659,12 @@ body {
 }
 
 }
+
+@media(max-width:768px){
+
+.about-container p{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+}
