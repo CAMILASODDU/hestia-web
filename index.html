@@ -12,13 +12,21 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
 
     <header class="header" id="header">
         <div class="container nav-container">
+
             <div class="logo">
                 <img src="LOGO_hestiabygerez.png" alt="Logo">
             </div>
@@ -28,6 +36,7 @@
                     <li><a href="#hero">Inicio</a></li>
                     <li><a href="#about">Quiénes Somos</a></li>
                     <li><a href="#services">Servicios</a></li>
+                    <li><a href="#projects">Proyectos</a></li>
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
             </nav>
@@ -35,44 +44,83 @@
             <div class="hamburger" id="hamburger">
                 <span></span><span></span><span></span>
             </div>
+
         </div>
     </header>
 
+
     <!-- HERO -->
     <section class="hero" id="hero">
+
+        <video id="heroVideo" autoplay muted playsinline class="hero-video">
+            <source src="video_hero1.mp4" type="video/mp4">
+        </video>
+
         <div class="container hero-container">
 
-            <div class="hero-text">
+            <div class="hero-text hero-animate">
+
                 <h1>Hestia by Gerez</h1>
+
                 <p>
                     Arquitectura contemporánea y diseño integral orientado a crear espacios
                     funcionales, estéticos y técnicamente precisos.
                 </p>
+
                 <a href="#contact" class="btn-primary">Iniciar Proyecto</a>
+
             </div>
 
             <div class="hero-image">
-                <img src="espacio.png" alt="Proyecto">
+                <h1>holis jajaja compren mis servicios</h1>
             </div>
 
         </div>
+
     </section>
+
 
     <!-- QUIENES SOMOS -->
     <section class="about section" id="about">
-        <div class="container">
+
+        <div class="container about-container">
+
             <h2>Quiénes Somos</h2>
+
             <p>
-                Estudio especializado en arquitectura e interiorismo con enfoque técnico y conceptual.
-                Diseñamos espacios que integran proporción, materialidad y funcionalidad,
-                desarrollando proyectos con precisión constructiva y dirección profesional en cada etapa.
+                Somos un estudio de diseño que promueve la <strong>sinergia y la innovación</strong> a través de un
+                enfoque integral,
+                orientado a generar soluciones que impacten positivamente en la <strong>calidad de vida de las
+                    personas</strong>.
+                Nuestro trabajo se basa en comprender cada proyecto de manera global, integrando creatividad,
+                funcionalidad y estrategia para transformar espacios y productos en experiencias significativas.
+
+                Nos enfocamos en desarrollar <strong>ideas y propuestas que potencien la identidad, la eficiencia y el
+                    valor
+                    del diseño</strong>, adaptadas a las necesidades específicas de cada cliente. Creemos en la
+                importancia de
+                construir vínculos sólidos, por eso acompañamos cada etapa del proceso proyectual con asesoramiento
+                cercano y profesional, brindando seguridad, claridad y soluciones eficientes tanto para las necesidades
+                actuales como para las proyecciones futuras.
+
+                Desde una perspectiva de <strong>diseño integral</strong>, incorporamos herramientas conceptuales como
+                el
+                <strong>neurodiseño, la semántica y la semiótica</strong>, que nos permiten comprender cómo los
+                espacios, los objetos
+                y los materiales influyen en la percepción y en la experiencia de las personas.
             </p>
+
         </div>
+
     </section>
+
+
 
     <!-- SERVICIOS -->
     <section class="services section" id="services">
+
         <div class="container">
+
             <h2>Servicios</h2>
 
             <div class="services-grid">
@@ -82,45 +130,99 @@
                     <p>Proyectos residenciales y comerciales desarrollados integralmente.</p>
                 </div>
 
-                <div class="service-card" onclick="openCarousel()">
+                <div class="service-card" onclick="openCarousel('interiorismo')">
                     <h3>Interiorismo</h3>
                     <p>Diseño interior con identidad, equilibrio y sofisticación.</p>
                 </div>
 
-                <div class="service-card" onclick="openCarousel()">
+                <div class="service-card" onclick="openCarousel('mobiliario')">
                     <h3>Mobiliario</h3>
                     <p>Desarrollo de piezas exclusivas adaptadas al espacio.</p>
                 </div>
 
-                <div class="service-card" onclick="openCarousel()">
+                <div class="service-card" onclick="openCarousel('obra')">
                     <h3>Dirección de Obra</h3>
                     <p>Supervisión técnica y coordinación integral del proyecto.</p>
                 </div>
 
             </div>
+
         </div>
+
     </section>
 
-    <!-- CARRUSEL MODAL -->
+
+    <!-- PROYECTOS -->
+    <section class="projects section" id="projects">
+
+        <div class="container">
+
+            <h2>Proyectos</h2>
+
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <img src="proyecto1.jpg">
+                    <div class="project-overlay">
+                        <h3>Proyecto Residencial</h3>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="proyecto2.jpg">
+                    <div class="project-overlay">
+                        <h3>Interiorismo</h3>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="proyecto3.jpg">
+                    <div class="project-overlay">
+                        <h3>Diseño Comercial</h3>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="proyecto4.jpg">
+                    <div class="project-overlay">
+                        <h3>Mobiliario</h3>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CARRUSEL -->
     <div class="carousel-modal" id="carouselModal">
+
         <div class="carousel-content">
+
             <span class="close" onclick="closeCarousel()">×</span>
 
             <button class="arrow left" onclick="prevSlide()">‹</button>
 
-            <img id="carouselImage" src="interior1.jpg" alt="Proyecto">
+            <img id="carouselImage" src="interior1.jpg">
 
             <button class="arrow right" onclick="nextSlide()">›</button>
+
         </div>
+
     </div>
+
 
     <!-- CONTACTO -->
     <section class="contact section" id="contact">
+
         <div class="container">
 
             <h2>Contacto</h2>
 
             <div class="contact-wrapper">
+
                 <div class="contact-social">
 
                     <a href="https://www.instagram.com/hestia.estudio" target="_blank" class="social-card">
@@ -141,21 +243,32 @@
                 </div>
 
                 <form action="https://formsubmit.co/hestia@bygerez.com" method="POST" class="contact-form">
+
                     <input type="hidden" name="_captcha" value="false">
+
                     <input type="text" name="Nombre" placeholder="Nombre completo" required>
+
                     <input type="email" name="Email" placeholder="Correo electrónico" required>
+
                     <textarea name="Mensaje" rows="5" placeholder="Escriba su mensaje..." required></textarea>
+
                     <button type="submit" class="btn-primary">Enviar Consulta</button>
+
                 </form>
 
             </div>
+
+        </div>
+
     </section>
+
 
     <footer class="footer">
         <p>© 2026 Hestia Studio</p>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
+
 </body>
 
 </html>
