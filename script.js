@@ -68,21 +68,65 @@ let current = 0;
 
 const modal = document.getElementById("carouselModal");
 const carouselImage = document.getElementById("carouselImage");
+const thumbsContainer = document.getElementById("carouselThumbs");
 
 
 function showImage() {
 
-  if (!carouselImage) return;
-
   carouselImage.style.opacity = 0;
 
   setTimeout(() => {
+
     carouselImage.src = images[current];
     carouselImage.style.opacity = 1;
+
+    updateThumbs();
+
   }, 150);
 
 }
 
+function generateThumbs() {
+
+  if (!thumbsContainer) return;
+
+  thumbsContainer.innerHTML = "";
+
+  images.forEach((img, index) => {
+
+    const thumb = document.createElement("img");
+
+    thumb.src = img;
+
+    if (index === current) {
+      thumb.classList.add("active");
+    }
+
+    thumb.addEventListener("click", () => {
+
+      current = index;
+      showImage();
+      updateThumbs();
+
+    });
+
+    thumbsContainer.appendChild(thumb);
+
+  });
+
+}
+
+function updateThumbs() {
+
+  const thumbs = document.querySelectorAll(".carousel-thumbnails img");
+
+  thumbs.forEach((thumb, i) => {
+
+    thumb.classList.toggle("active", i === current);
+
+  });
+
+}
 
 function openCarousel(service) {
 
@@ -92,9 +136,9 @@ function openCarousel(service) {
   current = 0;
 
   carouselImage.src = images[current];
-  carouselImage.style.opacity = 1;
-
   modal.style.display = "flex";
+
+  generateThumbs();
 
 }
 
