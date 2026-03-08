@@ -507,7 +507,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     font-size: 40px;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     border: none;
     color: white;
     cursor: pointer;
@@ -528,7 +528,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0,0,0,.5);
+    background: rgba(0, 0, 0, .5);
     color: white;
     border: none;
     font-size: 28px;
@@ -537,24 +537,25 @@ body {
     z-index: 10;
 }
 
-@media(max-width:768px){
+@media(max-width:768px) {
 
-.carousel-content{
-    max-width: 95%;
-}
+    .carousel-content {
+        max-width: 95%;
+    }
 
-.carousel-content img{
-    max-height: 70vh;
-}
+    .carousel-content img {
+        max-height: 70vh;
+    }
 
-.arrow{
-    font-size: 32px;
-    padding: 8px 14px;
-}
+    .arrow {
+        font-size: 32px;
+        padding: 8px 14px;
+        touch-action: manipulation;
+    }
 
-.close{
-    top: -30px;
-    right: 10px;
-}
+    .close {
+        top: -30px;
+        right: 10px;
+    }
 
 }
