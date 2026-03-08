@@ -70,30 +70,38 @@ const modal = document.getElementById("carouselModal");
 const carouselImage = document.getElementById("carouselImage");
 
 
+function showImage() {
+
+  if (!carouselImage) return;
+
+  carouselImage.style.opacity = 0;
+
+  setTimeout(() => {
+    carouselImage.src = images[current];
+    carouselImage.style.opacity = 1;
+  }, 150);
+
+}
+
+
 function openCarousel(service) {
 
-  images = serviceImages[service] || [];
+  if (!serviceImages[service]) return;
 
+  images = serviceImages[service];
   current = 0;
 
-  if (images.length === 0) return;
+  carouselImage.src = images[current];
+  carouselImage.style.opacity = 1;
 
-  if (carouselImage) {
-    carouselImage.src = images[current];
-  }
-
-  if (modal) {
-    modal.style.display = "flex";
-  }
+  modal.style.display = "flex";
 
 }
 
 
 function closeCarousel() {
 
-  if (modal) {
-    modal.style.display = "none";
-  }
+  modal.style.display = "none";
 
 }
 
@@ -101,10 +109,7 @@ function closeCarousel() {
 function nextSlide() {
 
   current = (current + 1) % images.length;
-
-  if (carouselImage) {
-    carouselImage.src = images[current];
-  }
+  showImage();
 
 }
 
@@ -112,15 +117,12 @@ function nextSlide() {
 function prevSlide() {
 
   current = (current - 1 + images.length) % images.length;
-
-  if (carouselImage) {
-    carouselImage.src = images[current];
-  }
+  showImage();
 
 }
 
 
-/* cerrar modal click fuera */
+/* cerrar modal clic fuera */
 
 if (modal) {
 
@@ -133,7 +135,7 @@ if (modal) {
 }
 
 
-/* cerrar modal con tecla ESC */
+/* cerrar con ESC */
 
 document.addEventListener("keydown", (e) => {
 
@@ -143,6 +145,35 @@ document.addEventListener("keydown", (e) => {
 
 });
 
+
+/* ===== SWIPE MOBILE ===== */
+
+let startX = 0;
+let endX = 0;
+
+const carouselContent = document.querySelector(".carousel-content");
+
+if (carouselContent) {
+
+  carouselContent.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+
+  carouselContent.addEventListener("touchend", (e) => {
+
+    endX = e.changedTouches[0].clientX;
+
+    if (startX - endX > 50) {
+      nextSlide();
+    }
+
+    if (endX - startX > 50) {
+      prevSlide();
+    }
+
+  });
+
+}
 
 /* ================= HERO VIDEOS EN COLA ================= */
 
