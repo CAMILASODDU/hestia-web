@@ -246,3 +246,51 @@ if (heroVideo) {
   });
 
 }
+
+/* ================= GALERIA ARQUITECTURA ================= */
+
+const galleryItems = document.querySelectorAll(".gallery-item");
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("visible");
+
+}
+
+});
+
+});
+
+galleryItems.forEach(item => observer.observe(item));
+
+
+/* LIGHTBOX */
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+
+document.querySelectorAll(".gallery-item img").forEach(img => {
+
+img.addEventListener("click", () => {
+
+lightbox.style.display = "flex";
+
+lightboxImg.src = img.src;
+
+});
+
+});
+
+if(lightbox){
+
+lightbox.addEventListener("click", () => {
+
+lightbox.style.display = "none";
+
+});
+
+}
