@@ -390,6 +390,11 @@ body {
     width: 100%;
 }
 
+.social-card a {
+    color: white;
+    text-decoration: none;
+}
+
 .social-card:hover {
     border-color: #7A0F14;
 }
@@ -407,6 +412,16 @@ body {
     padding: 14px;
     border: none;
     border-radius: 4px;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.contact-form button {
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 /* ================= FOOTER ================= */
@@ -562,109 +577,158 @@ body {
 
 /* ===== CARRUSEL PROFESIONAL ===== */
 
-.carousel-modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.95);
-    justify-content:center;
-    align-items:center;
-    z-index:3000;
+.carousel-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .95);
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
 }
 
-.carousel-content{
-    position:relative;
-    width:90%;
-    max-width:1100px;
+.carousel-content {
+    position: relative;
+    width: 90%;
+    max-width: 1100px;
 }
 
-.carousel-content img{
-    width:100%;
-    max-height:80vh;
-    object-fit:contain;
-    transition:opacity .4s ease;
+.carousel-content img {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    transition: opacity .4s ease;
 }
 
-.close{
-    position:absolute;
-    top:-40px;
-    right:0;
-    font-size:40px;
-    color:white;
-    cursor:pointer;
+.close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
 }
 
-.arrow{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    background:rgba(0,0,0,.5);
-    border:none;
-    color:white;
-    font-size:38px;
-    padding:10px 16px;
-    cursor:pointer;
-    border-radius:6px;
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, .5);
+    border: none;
+    color: white;
+    font-size: 38px;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 6px;
 }
 
-.arrow.left{ left:10px; }
-.arrow.right{ right:10px; }
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
 
 
 /* miniaturas */
 
-.carousel-thumbnails{
-    margin-top:20px;
-    display:flex;
-    gap:10px;
-    justify-content:center;
-    flex-wrap:wrap;
+.carousel-thumbnails {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.carousel-thumbnails img{
-    width:90px;
-    height:60px;
-    object-fit:cover;
-    opacity:.6;
-    cursor:pointer;
-    border-radius:4px;
-    transition:.3s;
+.carousel-thumbnails img {
+    width: 90px;
+    height: 60px;
+    object-fit: cover;
+    opacity: .6;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: .3s;
 }
 
-.carousel-thumbnails img:hover{
-    opacity:1;
+.carousel-thumbnails img:hover {
+    opacity: 1;
 }
 
-.carousel-thumbnails img.active{
-    opacity:1;
-    outline:2px solid white;
+.carousel-thumbnails img.active {
+    opacity: 1;
+    outline: 2px solid white;
 }
 
 
 /* mobile */
 
-@media(max-width:768px){
+@media(max-width:768px) {
 
-.carousel-content img{
-    max-height:65vh;
+    .carousel-content img {
+        max-height: 65vh;
+    }
+
+    .carousel-thumbnails img {
+        width: 70px;
+        height: 50px;
+    }
+
+    .arrow {
+        font-size: 30px;
+    }
+
 }
 
-.carousel-thumbnails img{
-    width:70px;
-    height:50px;
-}
+@media(max-width:768px) {
 
-.arrow{
-    font-size:30px;
-}
+    .about-container p {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 
 }
 
-@media(max-width:768px){
+/* ================= FIX LINKS MOBILE + UX PRO ================= */
 
-.about-container p{
-    padding-left: 20px;
-    padding-right: 20px;
+/* Evita azul en todos los estados */
+.contact a,
+.contact a:visited,
+.contact a:hover,
+.contact a:active {
+    color: white;
+    text-decoration: none;
 }
 
+/* Asegura que el card completo mantenga estilo */
+.social-card,
+.social-card:visited,
+.social-card:hover,
+.social-card:active {
+    color: white;
+    text-decoration: none;
+}
+
+/* Mejora visual (hover desktop) */
+.social-card:hover {
+    border-color: #7A0F14;
+    background: #222;
+}
+
+/* Mejora interacción mobile (tap feedback) */
+.social-card:active {
+    transform: scale(0.98);
+    background: #252525;
+}
+
+/* Evita highlight azul en móviles (Android/iOS) */
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Evita estilos automáticos de teléfono/email en iOS */
+a[href^="tel"],
+a[href^="mailto"] {
+    color: white;
+    text-decoration: none;
 }
