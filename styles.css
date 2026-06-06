@@ -20,22 +20,44 @@ body {
     margin: auto;
 }
 
+
 /* ================= HEADER ================= */
 
 .header {
     position: fixed;
-    width: 100%;
     top: 0;
-    transition: .4s;
+    left: 0;
+    width: 100%;
+    padding: 8px 5px;
     z-index: 1000;
-    padding: 0 40px;
+    background: transparent;
 }
 
-.header.scrolled {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+.header .container {
+    width: 96%;
+    max-width: 1400px;
 }
+
+/* ================= DIFUMINADO HEADER ================= */
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    z-index: -1;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.92) 25%,
+            rgba(255, 255, 255, 0.55) 60%,
+            rgba(255, 255, 255, 0.20) 85%,
+            transparent 100%);
+    filter: blur(5px);
+}
+
+
 
 .nav-container {
     display: flex;
@@ -278,10 +300,9 @@ body {
 }
 
 .about-container {
-    display: grid;
-    grid-template-columns: 1.4fr 0.9fr;
-    gap: 50px;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
 
     max-width: 1200px;
     margin: 0 auto;
@@ -298,7 +319,7 @@ body {
 
 .about-image img {
     width: 100%;
-    max-width: 300px;
+    max-width: 900px;
     border-radius: 18px;
     box-shadow: 0 30px 60px rgba(0, 0, 0, .35);
 }
