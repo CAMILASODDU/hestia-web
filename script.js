@@ -226,22 +226,38 @@ const heroVideo = document.getElementById("heroVideo");
 if (heroVideo) {
 
   const heroVideos = [
-    "video_hero1.mp4",
-    "video_hero2.mp4"
+    "animacion1.mp4",
+    "animacion2.mp4",
+    "animacion4.mp4"
   ];
 
   let currentVideo = 0;
 
   heroVideo.addEventListener("ended", () => {
 
-    currentVideo++;
+    heroVideo.style.opacity = "0";
 
-    if (currentVideo >= heroVideos.length) {
-      currentVideo = 0;
-    }
+    setTimeout(() => {
 
-    heroVideo.src = heroVideos[currentVideo];
-    heroVideo.play();
+      currentVideo++;
+
+      if (currentVideo >= heroVideos.length) {
+        currentVideo = 0;
+      }
+
+      heroVideo.src = heroVideos[currentVideo];
+
+      heroVideo.load();
+
+      heroVideo.oncanplay = () => {
+
+        heroVideo.play();
+
+        heroVideo.style.opacity = "1";
+
+      };
+
+    }, 800);
 
   });
 
@@ -253,15 +269,15 @@ const galleryItems = document.querySelectorAll(".gallery-item");
 
 const observer = new IntersectionObserver(entries => {
 
-entries.forEach(entry => {
+  entries.forEach(entry => {
 
-if(entry.isIntersecting){
+    if (entry.isIntersecting) {
 
-entry.target.classList.add("visible");
+      entry.target.classList.add("visible");
 
-}
+    }
 
-});
+  });
 
 });
 
@@ -275,22 +291,22 @@ const lightboxImg = document.getElementById("lightboxImg");
 
 document.querySelectorAll(".gallery-item img").forEach(img => {
 
-img.addEventListener("click", () => {
+  img.addEventListener("click", () => {
 
-lightbox.style.display = "flex";
+    lightbox.style.display = "flex";
 
-lightboxImg.src = img.src;
+    lightboxImg.src = img.src;
 
-});
-
-});
-
-if(lightbox){
-
-lightbox.addEventListener("click", () => {
-
-lightbox.style.display = "none";
+  });
 
 });
+
+if (lightbox) {
+
+  lightbox.addEventListener("click", () => {
+
+    lightbox.style.display = "none";
+
+  });
 
 }
