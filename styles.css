@@ -828,3 +828,161 @@ a[href^="mailto"] {
     color: white;
     text-decoration: none;
 }
+
+/* ================= LANDING EN CONSTRUCCIÓN ================= */
+/* Ajustes del contenido; header, paleta, botones y footer mantienen su identidad. */
+
+.hero {
+    min-height: 100svh;
+    padding: 150px 0 90px;
+    justify-content: center;
+}
+
+.hero::after {
+    background: rgba(0, 0, 0, 0.42);
+}
+
+.hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+    transform: none;
+    text-align: center;
+}
+
+.hero-text {
+    width: 100%;
+    max-width: 790px;
+    margin: 0 auto;
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.88);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    margin-bottom: 22px;
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5.5vw, 4.8rem);
+    line-height: 1.12;
+    font-weight: 600;
+    margin: 0 auto 26px;
+    color: #fff;
+    max-width: 800px;
+}
+
+.hero-text p {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 620px;
+    margin: 0 auto 34px;
+}
+
+.hero-text .btn-primary {
+    animation-delay: .6s;
+    padding: 15px 28px;
+}
+
+.hero-note {
+    display: block;
+    margin-top: 22px;
+    font-size: .9rem;
+    font-weight: 300;
+    letter-spacing: .04em;
+    color: rgba(255, 255, 255, .78);
+    opacity: 0;
+    animation: heroFadeUp 1s ease .8s forwards;
+}
+
+.contact {
+    min-height: auto;
+}
+
+.contact h2 {
+    color: #fff;
+}
+
+.contact-wrapper {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    max-width: 1100px;
+}
+
+.social-card {
+    display: block;
+}
+
+.social-card h4 {
+    margin-bottom: 4px;
+}
+
+.social-card p {
+    color: #d0d0d0;
+}
+
+.contact-form .btn-primary {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 125px;
+        padding-bottom: 70px;
+    }
+
+    .hero-container {
+        width: 88%;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(2.35rem, 10vw, 3.4rem);
+        margin-bottom: 22px;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 28px;
+    }
+
+    .hero-text .btn-primary {
+        padding: 14px 22px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .contact {
+        padding: 90px 0;
+    }
+
+    .contact h2 {
+        margin-bottom: 35px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-animate h1,
+    .hero-animate p,
+    .hero-animate .btn-primary,
+    .hero-note {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}

@@ -4,294 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hestia Studio</title>
-
+    <meta name="theme-color" content="#f5f5f5">
+    <title>Hestia Studio | Próximamente</title>
     <link rel="icon" type="image/png" href="favicon.png">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200;300;400;500;600;700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@200;300;400;500;600;700&display=swap"
         rel="stylesheet">
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
+    <!-- HEADER: se conserva el diseño original -->
     <header class="header" id="header">
         <div class="container nav-container">
-
             <div class="logo">
-                <a href="#hero"><img src="logo_actualizado.png" alt="Hestia Logo"></a>
-
+                <a href="#hero"><img src="logo_actualizado.png" alt="Hestia Studio"></a>
             </div>
-
-            <nav>
+            <nav aria-label="Navegación principal">
                 <ul class="nav-links">
                     <li><a href="#hero">Inicio</a></li>
-                    <li><a href="#about">Quiénes Somos</a></li>
-                    <li><a href="#services">Servicios</a></li>
-                    <li><a href="#projects">Proyectos</a></li>
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
             </nav>
-
-            <div class="hamburger" id="hamburger">
+            <div class="hamburger" id="hamburger" aria-label="Abrir menú" role="button" tabindex="0"
+                aria-expanded="false">
                 <span></span><span></span><span></span>
             </div>
-
         </div>
     </header>
 
-
-    <!-- HERO -->
-    <section class="hero" id="hero">
-
-        <video id="heroVideo" autoplay muted playsinline preload="auto" class="hero-video">
-            <source src="animacion1.mp4" type="video/mp4">
-        </video>
-
-        <div class="container hero-container">
-
-            <div class="hero-text hero-animate">
-
-                <p>
-                    Construye desde la esencia lo que quieras que perdure
-                </p>
-
-                <a href="#contact" class="btn-primary">Iniciar Proyecto</a>
-
+    <!-- HERO: sitio en construcción -->
+    <main>
+        <section class="hero" id="hero">
+            <video id="heroVideo" autoplay muted loop playsinline preload="auto" class="hero-video" aria-hidden="true">
+                <source src="animacion1.mp4" type="video/mp4">
+            </video>
+            <div class="container hero-container">
+                <div class="hero-text hero-animate">
+                    <span class="hero-eyebrow">HESTIA STUDIO</span>
+                    <h1>Estamos preparando algo especial.</h1>
+                    <p>Estamos renovando nuestro espacio para compartir muy pronto todo lo que imaginamos y diseñamos.
+                        Mientras tanto, podés ponerte en contacto con nosotros.</p>
+                    <a href="#contact" class="btn-primary">Avisame cuando esté lista</a>
+                    <span class="hero-note">Un nuevo espacio, muy pronto.</span>
+                </div>
             </div>
+        </section>
 
-            <div class="hero-image">
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- QUIENES SOMOS -->
-    <section class="about section" id="about">
-
-        <div class="container">
-
-            <h2 class="section-title">Quiénes Somos</h2>
-
-            <div class="about-container">
-
-                <div class="about-text">
-
-                    <p> Hestia by Gerez: estudio de diseño integral.
-                        <br>
-                        <br>Desde 2013, nuestra misión ha sido transformar espacios en hogares y entornos funcionales.
-                        comenzamos como un estudio especializado en amoblamientos, avanzando sobre distintos fines de
-                        obra.
-                        <br> Bajo la dirección de Leandro Gerez, diseñador industrial, y Daiana Comesaña, docente y
-                        terapeuta.
-                        Nuestro nombre, hestia, rinde homenaje a la diosa griega del fuego sagrado, protectora del hogar
-                        y la familia,símbolo de la calidez, la estabilidad y la unidad en el corazón de cada espacio.
-                        Como pareja desde hace 18 años, entendemos el hogar como el epicentro de la vida.
-
-                        <br>Nuestra Propuesta: Del concepto a la realidad.
-                        Ofrecemos un servicio de diseño integral que abarca desde la consultoría de ideas y la
-                        planificación inicial hasta la materialización final, apoyados en tecnología de vanguardia y una
-                        marcada diversidad de materialidades y procesos tecnoproductivos. Nuestra gestión abarca:
-                        <br>
-                        <br>•Proyectos Residenciales y comerciales :diseño interior y exterior,desarrollo de objetos
-                        ,reformas y ampliaciones.
-                        <br>
-                        <br>•Construcciones híbridas y en Steel Frame, con dirección y ejecución propia.
-                        <br>•Amoblamientos: Piezas a medida que integran sostenibilidad, cuidado ambiental.
-                        <br>•Finales de Obra: Supervisión y ejecución detallada para garantizar excelencia técnica.
-                        <br>
-                        <br>Piezas con Identidad.
-                        <br>Diseñamos y fabricamos objetos exclusivos que otorgan un valor singular a cada ambiente,
-                        convirtiéndolo en una obra única que refleja la esencia de quienes lo habitan.
-                        <br <br>El valor de lo humano.
-                        <br>Sabemos que los objetos y los espacios son una extensión de nuestra mente. Por ello,
-                        combinamos
-                        técnica y neurodiseño para crear ambientes que no solo funcionen, sino que se sientan.
-                        Conciencia ambiental , confianza y respeto son los pilares de nuestros vínculos; trabajamos en
-                        red con artistas, artesanos y empresas de excelencia, manteniendo un feedback constante con
-                        nuestros clientes.
-
-                    </p>
-
-                </div>
-
-                <!-- IMAGEN -->
-                <div class="about-image">
-                    <img src="nosotros_img.jpg" alt="Estudio de diseño">
-                </div>
-
-            </div>
-
-    </section>
-
-
-
-    <!-- SERVICIOS -->
-    <section class="services section" id="services">
-
-        <div class="container">
-
-            <h2>Servicios</h2>
-
-            <div class="services-grid">
-
-                <div class="service-card" onclick="window.location.href='arquitectura.html'">
-                    <h3>Arquitectura</h3>
-                    <p>Proyectos residenciales y comerciales desarrollados integralmente.</p>
-                </div>
-
-                <div class="service-card" onclick="openCarousel('interiorismo')">
-                    <h3>Interiorismo</h3>
-                    <p>Diseño interior con identidad, equilibrio y sofisticación.</p>
-                </div>
-
-                <div class="service-card" onclick="window.location.href='mobiliario.html'">
-                    <h3>Mobiliario</h3>
-                    <p>Desarrollo de piezas exclusivas adaptadas al espacio.</p>
-                </div>
-
-                <div class="service-card" onclick="openCarousel('obra')">
-                    <h3>Dirección de Obra</h3>
-                    <p>Supervisión técnica y coordinación integral del proyecto.</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROYECTOS -->
-    <section class="projects section" id="projects">
-
-        <div class="container">
-
-            <h2>Proyectos</h2>
-
-            <div class="projects-grid">
-
-                <div class="project-card">
-                    <img src="proyecto-residencial.jpg">
-                    <div class="project-overlay">
-                        <h3>Proyecto Residencial</h3>
+        <!-- CONTACTO: se conservan los datos y el formulario existentes -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <h2>Contacto</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-social">
+                        <a href="https://www.instagram.com/hestia.estudio" target="_blank" rel="noopener noreferrer"
+                            class="social-card">
+                            <h4>Instagram</h4>
+                            <p>@hestia.estudio</p>
+                        </a>
+                        <a href="https://wa.me/542215456437" target="_blank" rel="noopener noreferrer"
+                            class="social-card">
+                            <h4>WhatsApp</h4>
+                            <p>2215456437 / 2215058487</p>
+                        </a>
+                        <a href="mailto:hestia@bygerez.com" class="social-card">
+                            <h4>Email</h4>
+                            <p>hestia@bygerez.com</p>
+                        </a>
                     </div>
+                    <form action="https://formsubmit.co/hestia@bygerez.com" method="POST" class="contact-form">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="Aviso de interés - Hestia Studio">
+                        <input type="text" name="Nombre" placeholder="Nombre completo" aria-label="Nombre completo"
+                            required>
+                        <input type="email" name="Email" placeholder="Correo electrónico"
+                            aria-label="Correo electrónico" required>
+                        <textarea name="Mensaje" rows="5" placeholder="Mensaje"
+                            aria-label="Mensaje" required></textarea>
+                        <button type="submit" class="btn-primary">Avisarme</button>
+                    </form>
                 </div>
-
-                <div class="project-card">
-                    <img src="interiorismo.jpg">
-                    <div class="project-overlay">
-                        <h3>Interiorismo</h3>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="diseño-comercial.jpg">
-                    <div class="project-overlay">
-                        <h3>Diseño Comercial</h3>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="mobiliario-index.jpg">
-                    <div class="project-overlay">
-                        <h3>Mobiliario</h3>
-                    </div>
-                </div>
-
             </div>
+        </section>
+    </main>
 
-        </div>
-
-    </section>
-
-
-    <!-- CARRUSEL -->
-    <div class="carousel-modal" id="carouselModal">
-
-        <div class="carousel-content">
-
-            <span class="close" onclick="closeCarousel()">×</span>
-
-            <button class="arrow left" onclick="prevSlide()">‹</button>
-
-            <img id="carouselImage" src="">
-
-            <button class="arrow right" onclick="nextSlide()">›</button>
-
-            <div class="carousel-thumbnails" id="carouselThumbs"></div>
-
-        </div>
-
-    </div>
-
-
-    <!-- CONTACTO -->
-    <section class="contact section" id="contact">
-
-        <div class="container">
-
-            <h2>Contacto</h2>
-
-            <div class="contact-wrapper">
-
-                <div class="contact-social">
-
-                    <a href="https://www.instagram.com/hestia.estudio" target="_blank" class="social-card">
-                        <h4>Instagram</h4>
-                        <p>@hestia.estudio</p>
-                    </a>
-
-                    <a href="https://wa.me/542215456437" target="_blank" class="social-card">
-                        <h4>WhatsApp</h4>
-                        <p>2215456437 / 2215058487</p>
-                    </a>
-
-                    <a href="mailto:hestia@bygerez.com" class="social-card">
-                        <h4>Email</h4>
-                        <p>hestia@bygerez.com</p>
-                    </a>
-
-                </div>
-
-                <form action="https://formsubmit.co/hestia@bygerez.com" method="POST" class="contact-form">
-
-                    <input type="hidden" name="_captcha" value="false">
-
-                    <input type="text" name="Nombre" placeholder="Nombre completo" required>
-
-                    <input type="email" name="Email" placeholder="Correo electrónico" required>
-
-                    <textarea name="Mensaje" rows="5" placeholder="Escriba su mensaje..." required></textarea>
-
-                    <button type="submit" class="btn-primary">Enviar Consulta</button>
-
-                </form>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
+    <!-- FOOTER: se conserva el original -->
     <footer class="footer">
         <p>© 2026 Hestia Studio</p>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Menú móvil accesible; funciona junto con los estilos existentes.
+        const menuButton = document.getElementById('hamburger');
+        const menuLinks = document.querySelector('.nav-links');
 
+        function toggleMenu() {
+            const isOpen = menuLinks.classList.toggle('active');
+            menuButton.classList.toggle('active', isOpen);
+            menuButton.setAttribute('aria-expanded', String(isOpen));
+        }
+
+        menuButton.addEventListener('click', toggleMenu);
+        menuButton.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        menuLinks.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                menuLinks.classList.remove('active');
+                menuButton.classList.remove('active');
+                menuButton.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
 </body>
 
 </html>

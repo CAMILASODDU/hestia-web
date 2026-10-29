@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f5f5">
+    <title>Hestia Studio | Próximamente</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER: se conserva el diseño original -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="#hero"><img src="logo_actualizado.png" alt="Hestia Studio"></a>
+            </div>
+            <nav aria-label="Navegación principal">
+                <ul class="nav-links">
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger" aria-label="Abrir menú" role="button" tabindex="0" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO: sitio en construcción -->
+    <main>
+        <section class="hero" id="hero">
+            <video id="heroVideo" autoplay muted loop playsinline preload="auto" class="hero-video" aria-hidden="true">
+                <source src="animacion1.mp4" type="video/mp4">
+            </video>
+            <div class="container hero-container">
+                <div class="hero-text hero-animate">
+                    <span class="hero-eyebrow">HESTIA STUDIO</span>
+                    <h1>Estamos preparando algo especial.</h1>
+                    <p>Estamos renovando nuestro espacio para compartir muy pronto todo lo que imaginamos y diseñamos. Mientras tanto, podés ponerte en contacto con nosotros.</p>
+                    <a href="#contact" class="btn-primary">Avisame cuando esté lista</a>
+                    <span class="hero-note">Un nuevo espacio, muy pronto.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO: se conservan los datos y el formulario existentes -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <h2>Contacto</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-social">
+                        <a href="https://www.instagram.com/hestia.estudio" target="_blank" rel="noopener noreferrer" class="social-card">
+                            <h4>Instagram</h4>
+                            <p>@hestia.estudio</p>
+                        </a>
+                        <a href="https://wa.me/542215456437" target="_blank" rel="noopener noreferrer" class="social-card">
+                            <h4>WhatsApp</h4>
+                            <p>2215456437 / 2215058487</p>
+                        </a>
+                        <a href="mailto:hestia@bygerez.com" class="social-card">
+                            <h4>Email</h4>
+                            <p>hestia@bygerez.com</p>
+                        </a>
+                    </div>
+                    <form action="https://formsubmit.co/hestia@bygerez.com" method="POST" class="contact-form">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="Aviso de interés - Hestia Studio">
+                        <input type="text" name="Nombre" placeholder="Nombre completo" aria-label="Nombre completo" required>
+                        <input type="email" name="Email" placeholder="Correo electrónico" aria-label="Correo electrónico" required>
+                        <textarea name="Mensaje" rows="5" placeholder="Quiero que me avisen cuando la web esté lista..." aria-label="Mensaje" required></textarea>
+                        <button type="submit" class="btn-primary">Avisarme</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER: se conserva el original -->
+    <footer class="footer">
+        <p>© 2026 Hestia Studio</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Menú móvil accesible; funciona junto con los estilos existentes.
+        const menuButton = document.getElementById('hamburger');
+        const menuLinks = document.querySelector('.nav-links');
+
+        function toggleMenu() {
+            const isOpen = menuLinks.classList.toggle('active');
+            menuButton.classList.toggle('active', isOpen);
+            menuButton.setAttribute('aria-expanded', String(isOpen));
+        }
+
+        menuButton.addEventListener('click', toggleMenu);
+        menuButton.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        menuLinks.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                menuLinks.classList.remove('active');
+                menuButton.classList.remove('active');
+                menuButton.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+</html>

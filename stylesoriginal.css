@@ -1,0 +1,830 @@
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+    background: #f5f5f5;
+    color: #111;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* ================= HEADER ================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px 5px;
+    z-index: 1000;
+    background: transparent;
+}
+
+.header .container {
+    width: 96%;
+    max-width: 1400px;
+}
+
+/* ================= DIFUMINADO HEADER ================= */
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    z-index: -1;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.92) 25%,
+            rgba(255, 255, 255, 0.55) 60%,
+            rgba(255, 255, 255, 0.20) 85%,
+            transparent 100%);
+    filter: blur(5px);
+}
+
+
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+.logo img {
+    height: 90px;
+    width: auto;
+}
+
+/* ================= NAV ================= */
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    transition: .4s;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+    transition: .3s;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #7A0F14;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #7A0F14;
+    transition: .3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ================= HAMBURGER ================= */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: #111;
+    transition: .4s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100svh;
+    padding-top: 150px;
+    padding-bottom: 120px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+/* VIDEO HERO */
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+
+    opacity: 1;
+    transition: opacity .8s ease;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: -1;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    transform: translateY(-80px);
+}
+
+/* ================= HERO TEXT ================= */
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.hero-text p {
+    margin-bottom: 30px;
+    color: white;
+    font-size: 1.1rem;
+    max-width: 500px;
+}
+
+/* ================= HERO LOGO ================= */
+
+.hero-logo {
+    width: clamp(220px, 28vw, 420px);
+    height: auto;
+    display: block;
+    margin-bottom: 24px;
+    object-fit: contain;
+}
+
+/* responsive mobile */
+
+@media(max-width:768px) {
+
+    .hero-logo {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        width: clamp(150px, 55vw, 260px);
+    }
+
+}
+
+/* ================= HERO ANIMATION ================= */
+
+.hero-animate h1,
+.hero-animate p,
+.hero-animate .btn-primary {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: heroFadeUp 1s ease forwards;
+}
+
+.hero-animate p {
+    animation-delay: .3s;
+}
+
+.hero-animate .btn-primary {
+    animation-delay: .6s;
+}
+
+@keyframes heroFadeUp {
+
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.hero-image img {
+    width: 50%;
+    border-radius: 14px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* ================= BUTTON ================= */
+
+.btn-primary {
+    background: #7A0F14;
+    color: white;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: #7A0F14;
+}
+
+/* ================= SECTIONS ================= */
+
+.section {
+    padding: 120px 0;
+}
+
+.section h2,
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.1rem;
+    text-align: left;
+    margin-bottom: 60px;
+    position: relative;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about {
+    background: #3f3f3f;
+    color: white;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    max-width: 100%;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 18px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, .35);
+}
+
+
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, .92);
+    text-align: justify;
+}
+
+/* responsive mobile */
+
+@media(max-width:768px) {
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+
+    .about-text {
+        max-width: 100%;
+    }
+
+    .about-text h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .about-text p {
+        text-align: left;
+    }
+}
+
+
+/* ================= SERVICES ================= */
+
+.services {
+    background: #fffefe;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.service-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .4s;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: #7A0F14;
+}
+
+/* ================= PROJECTS ================= */
+
+.projects {
+    background: #f5f5f5;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    aspect-ratio: 1 / 1;
+    /* cuadrado perfecto */
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s;
+}
+
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0));
+    display: flex;
+    align-items: flex-end;
+    padding: 25px;
+    opacity: 0;
+    transition: .4s;
+}
+
+.project-overlay h3 {
+    color: white;
+    font-family: 'Playfair Display', serif;
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+/* ================= CONTACT ================= */
+
+.contact {
+    background: #111;
+    color: white;
+    padding: 120px 0;
+    display: flex;
+    align-items: center;
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 575px 520px;
+    gap: 60px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-social {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.social-card {
+    background: #1c1c1c;
+    padding: 18px 22px;
+    border-radius: 6px;
+    font-size: .9rem;
+    border: 1px solid #2a2a2a;
+    transition: .3s;
+    width: 100%;
+}
+
+.social-card a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-card:hover {
+    border-color: #7A0F14;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 520px;
+    width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 14px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.contact-form button {
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    background: #000;
+    color: #aaa;
+    text-align: center;
+    padding: 25px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px) {
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .nav-links {
+        position: fixed;
+        top: 90px;
+        right: -100%;
+        height: calc(100vh - 90px);
+        width: 260px;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 60px;
+        gap: 30px;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+}
+
+/* ===== CARRUSEL ===== */
+
+.carousel-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.carousel-content {
+    position: relative;
+    max-width: 90%;
+    touch-action: pan-y;
+}
+
+.carousel-content img {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    transition: opacity .4s ease;
+}
+
+.close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 16px;
+    border-radius: 6px;
+    z-index: 20;
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, .5);
+    color: white;
+    border: none;
+    font-size: 28px;
+    padding: 12px 18px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+@media(max-width:768px) {
+
+    .carousel-content {
+        max-width: 95%;
+    }
+
+    .carousel-content img {
+        max-height: 70vh;
+    }
+
+    .arrow {
+        font-size: 32px;
+        padding: 8px 14px;
+        touch-action: manipulation;
+    }
+
+    .close {
+        top: -30px;
+        right: 10px;
+    }
+
+}
+
+/* ===== CARRUSEL PROFESIONAL ===== */
+
+.carousel-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .95);
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+}
+
+.carousel-content {
+    position: relative;
+    width: 90%;
+    max-width: 1100px;
+}
+
+.carousel-content img {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    transition: opacity .4s ease;
+}
+
+.close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, .5);
+    border: none;
+    color: white;
+    font-size: 38px;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+
+/* miniaturas */
+
+.carousel-thumbnails {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.carousel-thumbnails img {
+    width: 90px;
+    height: 60px;
+    object-fit: cover;
+    opacity: .6;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.carousel-thumbnails img:hover {
+    opacity: 1;
+}
+
+.carousel-thumbnails img.active {
+    opacity: 1;
+    outline: 2px solid white;
+}
+
+
+/* mobile */
+
+@media(max-width:768px) {
+
+    .carousel-content img {
+        max-height: 65vh;
+    }
+
+    .carousel-thumbnails img {
+        width: 70px;
+        height: 50px;
+    }
+
+    .arrow {
+        font-size: 30px;
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .about-container p {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
+
+/* ================= FIX LINKS MOBILE + UX PRO ================= */
+
+/* Evita azul en todos los estados */
+.contact a,
+.contact a:visited,
+.contact a:hover,
+.contact a:active {
+    color: white;
+    text-decoration: none;
+}
+
+/* Asegura que el card completo mantenga estilo */
+.social-card,
+.social-card:visited,
+.social-card:hover,
+.social-card:active {
+    color: white;
+    text-decoration: none;
+}
+
+/* Mejora visual (hover desktop) */
+.social-card:hover {
+    border-color: #7A0F14;
+    background: #222;
+}
+
+/* Mejora interacción mobile (tap feedback) */
+.social-card:active {
+    transform: scale(0.98);
+    background: #252525;
+}
+
+/* Evita highlight azul en móviles (Android/iOS) */
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Evita estilos automáticos de teléfono/email en iOS */
+a[href^="tel"],
+a[href^="mailto"] {
+    color: white;
+    text-decoration: none;
+}
