@@ -986,3 +986,33 @@ a[href^="mailto"] {
         transform: none;
     }
 }
+
+/* HERO: fondo liso, sin video ni capa oscura */
+.hero {
+    background-color: #eae8e6;
+}
+
+.hero-video {
+    display: none;
+}
+
+.hero::after {
+    display: none;
+}
+
+/* Textos oscuros para contrastar con el fondo claro */
+.hero .hero-eyebrow {
+    color: #55504d;
+}
+
+.hero .hero-text h1 {
+    color: #22201f;
+}
+
+.hero .hero-text p {
+    color: #45413f;
+}
+
+.hero .hero-note {
+    color: #625d59;
+}
